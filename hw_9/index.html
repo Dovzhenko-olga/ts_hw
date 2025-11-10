@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Work 9</title>
+  <style>
+    ul {
+      list-style: none;
+      font-size: 24px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+
+    a span {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Tasks</h1>
+  <ul>
+    <li>
+      <a href="./tasks/task1.html">
+        <span> Задача 1. Отримання випадкового елемента.</span> Опиши функцію getRandom<T>, яка приймає масив будь-якого
+          типу та повертає випадковий елемент з нього.
+      </a>
+    </li>
+    <li>
+      <a href="./tasks/task2.html">
+        <span>Задача 2. Менеджер операцій.</span> Створи клас OperationManager<T>, який зберігає список операцій
+          будь-якого типу і має метод executeAll(callback: (item: T) => void) для виконання їх усіх.
+      </a>
+    </li>
+    <li>
+      <a href="./tasks/task3.html">
+        <span>Задача 3. Інтерфейс для перетворювача.</span> Створи інтерфейс Transformer<T, U> з методом
+          transform(value: T): U. Реалізуй кілька прикладів трансформацій: — рядок у число, — число у рядок, — об’єкт у
+          JSON.
+      </a>
+    </li>
+    <li>
+      <a href="./tasks/task4.html">
+        <span>Задача 4. Обмеження для типів, що реалізують інтерфейс.</span> Створи інтерфейс Printable з методом
+        print(): void. Опиши узагальнену функцію printAll<T extends Printable>(items: T[]), яка викликає метод print()
+          для кожного елемента масиву.
+      </a>
+    </li>
+    <li>
+      <a href="./tasks/task5.html">
+        <span>Задача 5. Ролі користувачів і їхні дозволи.</span> Опиши тип Roles = "admin" | "editor" | "viewer". Створи
+        тип RolePermissions = Record <Roles, string[]>, де кожен ключ містить список дій, які дозволені ролі.
+      </a>
+    </li>
+  </ul>
+
+</body>
+
+</html>
