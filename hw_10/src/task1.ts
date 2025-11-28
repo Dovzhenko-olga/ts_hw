@@ -1,7 +1,7 @@
 // Описати тип Auto (id, марка, колір, рік_випуску, власник). Потім описати DraftAuto для збереження неповних описів даних
 // про авто у localStorage.
 
-interface Auto{
+interface IAuto{
   id: number
   brand: string
   color: string
@@ -9,7 +9,7 @@ interface Auto{
   owner: string
 }
 
-type DraftAuto = Partial<Auto>
+type DraftAuto = Partial<IAuto>
 
 function saveData(data: DraftAuto) {
 

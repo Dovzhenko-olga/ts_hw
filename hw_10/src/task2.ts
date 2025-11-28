@@ -1,13 +1,13 @@
 // Налаштування гри GameSettings (швидкість, рівень, тип ворогів). Потім на основі цього типу створити тип,
 // що не можна змінювати під час гри.
 
-interface GameSettings{
+interface IGameSettings{
   speed: number
   level: number
   enemyType: string
 }
 
-type CurrentGameSettings = Readonly<GameSettings>
+type CurrentGameSettings = Readonly<IGameSettings>
 
 function game(s: CurrentGameSettings) {
 

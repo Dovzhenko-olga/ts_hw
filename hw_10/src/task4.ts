@@ -1,7 +1,7 @@
 // Використовуючи тип параметрів createProduct (title, price,discount) розробити функцію,
 // яка б формувала параметри для створення продукту.
 
-interface CreateProduct{
+interface ICreateProduct{
   title: string
   price: number
   discount: number
@@ -20,7 +20,7 @@ type ProductsParams = Parameters<typeof getProductsParameters>
 const params: ProductsParams = ['vacuum', 15000, 3500]
 const product1 = getProductsParameters(...params)
 
-function renderProduct(user: CreateProduct) {
+function renderProduct(user: ICreateProduct) {
   
   const resultList = document.createElement('ul')
 

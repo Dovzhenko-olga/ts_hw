@@ -2,7 +2,7 @@
 // працівника (ім'я, рік_народження, заробітна плата, стаж, підрозділ, адреса, спеціальність). Потім на основі цього
 // типу створи новий тип даних, що буде містити тільки ім'я, підрозділ та заробітну плату)
 
-interface Employee{
+interface IEmployee{
   name: string
   birthYear: number
   salary: number
@@ -12,7 +12,7 @@ interface Employee{
   profession: string
 }
 
-type LimitedData = Pick<Employee, 'name' | 'unit' | 'salary'>
+type LimitedData = Pick<IEmployee, 'name' | 'unit' | 'salary'>
 
 function getEmployeeData(user: LimitedData) {
   
