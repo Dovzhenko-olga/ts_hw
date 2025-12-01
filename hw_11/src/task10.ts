@@ -1,0 +1,38 @@
+// 🔐 Контроль прав доступу (Security Proxy)
+// Завдання:  Опиши інтерфейс DocumentAccess з методом readDocument(id: number).
+// Створи: RealDocumentService, який “завантажує” документ;
+// SecureDocumentProxy, який перевіряє роль користувача (admin, guest, user) перед доступом.
+// Мета: реалізувати контроль доступу до чутливих ресурсів через проксі.
+
+
+interface IDocumentAccess{
+  readDocument(id: number):void
+}
+
+class RealDocumentService implements IDocumentAccess{
+  readDocument(id: number): void {
+    console.log(`📄 Завантаження документа з id ${id}`)
+  }
+}
+
+class SecureDocumentProxy implements IDocumentAccess{
+  private document: RealDocumentService
+
+  constructor(private userRole: string) {
+    this.document = new RealDocumentService
+  }
+  readDocument(id: number): void {
+    console.log("[Proxy] Перевірка ролі користувача....")
+    if(this.userRole === 'admin' || this.userRole === 'user'){
+      this.document.readDocument(id)
+      console.log("[Proxy] Документ успішно завантажено.")
+    } else console.log("[Proxy] Нажаль у Вас немає прав доступу до цього документа.")
+  }
+}
+
+console.log('=========Адмін=========')
+const documentRequest1: IDocumentAccess = new SecureDocumentProxy('admin')
+documentRequest1.readDocument(256)
+console.log('=========Гість=========')
+const documentRequest2: IDocumentAccess = new SecureDocumentProxy('guest')
+documentRequest2.readDocument(14)
